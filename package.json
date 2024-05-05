@@ -7,16 +7,11 @@
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "helpers.js",
-    "helpers.d.ts",
-    "dist/index.d.ts"
-  ],
   "repository": {
     "url": "https://github.com/mehrangta/atlas-client"
   },
   "scripts": {
-    "build": "tsup",
+    "build": "rm -rf dist && tsup && tsup --dts-only && cp package.json dist/package.json",
     "types": "tsup --dts-only",
     "semantic-release": "semantic-release"
   },
@@ -46,6 +41,28 @@
   "release": {
     "branches": [
       "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/npm",
+        {
+          "pkgRoot": "./dist"
+        }
+      ],
+      "@semantic-release/github",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "package.json",
+            "README.md",
+            "dist/**/*.{js}"
+          ],
+          "message": "chore: Release ${nextRelease.version} [skip ci]"
+        }
+      ]
     ]
   },
   "publishConfig": {
