@@ -1,0 +1,44 @@
+{
+  "name": "atlas-client",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "helpers.js",
+    "helpers.d.ts",
+    "dist/index.d.ts"
+  ],
+  "repository": {
+    "url": "https://github.com/mehrangta/atlas-client"
+  },
+  "scripts": {
+    "build": "tsup",
+    "types": "tsup --dts-only"
+  },
+  "peerDependencies": {
+    "@abraham/reflection": "^0.12.0",
+    "@altv/types-client": "^16.2.2",
+    "@altv/types-natives": "^16.2.0",
+    "rxjs": "^6.6.7",
+    "tsyringe": "^4.5.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.12.8"
+  },
+  "dependencies": {
+    "@altv/types-client": "^16.2.2",
+    "@altv/types-natives": "^16.2.0",
+    "@swc/core": "^1.4.17",
+    "builtin-modules": "^4.0.0",
+    "fs-extra": "^11.2.0",
+    "rxjs": "^7.8.1",
+    "tsup": "^8.0.2",
+    "tsyringe": "^4.5.0",
+    "typescript": "^5.4.5"
+  }
+}
