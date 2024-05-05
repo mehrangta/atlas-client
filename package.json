@@ -1,6 +1,6 @@
 {
   "name": "atlas-client",
-  "version": "1.0.1",
+  "version": "0.0.0-development",
   "description": "",
   "keywords": [],
   "license": "ISC",
@@ -17,7 +17,8 @@
   },
   "scripts": {
     "build": "tsup",
-    "types": "tsup --dts-only"
+    "types": "tsup --dts-only",
+    "semantic-release": "semantic-release"
   },
   "peerDependencies": {
     "@abraham/reflection": "^0.12.0",
@@ -28,7 +29,8 @@
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^20.12.8"
+    "@types/node": "^20.12.8",
+    "semantic-release": "^23.0.8"
   },
   "dependencies": {
     "@altv/types-client": "^16.2.2",
@@ -43,18 +45,7 @@
   },
   "release": {
     "branches": [
-      "+([0-9])?(.{+([0-9]),x}).x",
-      "main",
-      "next",
-      "next-major",
-      {
-        "name": "beta",
-        "prerelease": true
-      },
-      {
-        "name": "alpha",
-        "prerelease": true
-      }
+      "main"
     ]
   },
   "publishConfig": {
