@@ -235,17 +235,17 @@ export class WebviewService {
   private startWebview(): void {
     this.webview = new WebView(this.url, false);
 
-    this.webview.on('load', () => {
-      this.setupEvents();
+    // this.webview.on('load', () => {
+    this.setupEvents();
 
-      UtilsService.nextTick(() => {
-        this.startListenEvents();
-        this.sendEventToServer();
-        this.listenToServerSendGuiEvent();
+    UtilsService.nextTick(() => {
+      this.startListenEvents();
+      this.sendEventToServer();
+      this.listenToServerSendGuiEvent();
 
-        this.doneCallback();
-      });
+      this.doneCallback();
     });
+    // });
   }
 
   /**
